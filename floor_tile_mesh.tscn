@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3uk5qjgmlo46"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7wsmg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n2bx7"]
+
+[node name="FloorTileMesh" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.15, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_7wsmg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_n2bx7")
+
+[node name="ConnectionPoints" type="Node3D" parent="."]
+
+[node name="ConnectionPoint_1" type="Node3D" parent="ConnectionPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+
+[node name="ConnectionPoint_2" type="Node3D" parent="ConnectionPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+
+[node name="ConnectionPoint_3" type="Node3D" parent="ConnectionPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+
+[node name="ConnectionPoint_4" type="Node3D" parent="ConnectionPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
