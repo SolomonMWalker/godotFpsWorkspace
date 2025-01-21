@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddy8urex2p6ym"]
+
+[ext_resource type="PackedScene" uid="uid://b7xsjphchxvuk" path="res://16x_16_floor_tile.tscn" id="1_a1v65"]
+[ext_resource type="Script" path="res://Player.cs" id="2_s0wma"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bgymt"]
+
+[node name="TestLevel" type="Node3D"]
+
+[node name="LevelGeometry" type="Node3D" parent="."]
+
+[node name="16x16FloorTile" parent="LevelGeometry" instance=ExtResource("1_a1v65")]
+
+[node name="16x16FloorTile2" parent="LevelGeometry" instance=ExtResource("1_a1v65")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16)
+
+[node name="16x16FloorTile3" parent="LevelGeometry" instance=ExtResource("1_a1v65")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -16)
+
+[node name="16x16FloorTile4" parent="LevelGeometry" instance=ExtResource("1_a1v65")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 0)
+
+[node name="Player" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+script = ExtResource("2_s0wma")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="Player"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_bgymt")
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
