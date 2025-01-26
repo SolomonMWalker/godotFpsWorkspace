@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://p7a3vk1h3fa0"]
+
+[ext_resource type="BoxMesh" uid="uid://bowhdsr2suif7" path="res://LevelGeometry/FloorTiles/4x4/floor_tile_4x4_mesh.tres" id="1_0qm1p"]
+[ext_resource type="Material" uid="uid://ci4bj08tqwac2" path="res://Materials/green.tres" id="2_44qwd"]
+[ext_resource type="Material" uid="uid://16hdbc48dmr4" path="res://Materials/black.tres" id="3_tedv8"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_j0iiv"]
+points = PackedVector3Array(-2, -0.075, -2, -2, 0.075, -2, 2, -0.075, -2, -2, -0.075, 2, -2, 0.075, 2, 2, 0.075, -2, 2, -0.075, 2, 2, 0.075, 2)
+
+[node name="MeshLibrary_Src" type="Node3D"]
+
+[node name="Floor4x4TileGreen" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_0qm1p")
+surface_material_override/0 = ExtResource("2_44qwd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor4x4TileGreen"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor4x4TileGreen/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_j0iiv")
+
+[node name="Floor4x4TileBlack" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+mesh = ExtResource("1_0qm1p")
+surface_material_override/0 = ExtResource("3_tedv8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor4x4TileBlack"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor4x4TileBlack/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_j0iiv")
