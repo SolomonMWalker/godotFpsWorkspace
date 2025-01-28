@@ -23,6 +23,10 @@ project/assembly_name="fpsWorkspace"
 
 enabled=PackedStringArray("res://addons/func_godot/plugin.cfg")
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 move_forward={

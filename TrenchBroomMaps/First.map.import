@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://uqlukla3g484"
+path="res://.godot/imported/First.map-b71b6617ffbc8c675efb440a68a45d41.tres"
+
+[deps]
+
+source_file="res://TrenchBroomMaps/First.map"
+dest_files=["res://.godot/imported/First.map-b71b6617ffbc8c675efb440a68a45d41.tres"]
+
+[params]
+
